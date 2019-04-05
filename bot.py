@@ -40,6 +40,8 @@ async def on_message(message):
         elif message.content == "!insult":
             await message.channel.send(
                 f'{message.author.mention}, your mother was a hamster and your father smelt of elderberries')
+        elif message.content == "!timothy":
+            await message.channel.send("Timothy is very helpful")
         elif message.content == "!helpscb":
             embed = discord.Embed(title="help for superCoolBot1.9", description="henlo idiot, here are the commands")
             embed.add_field(name="!hello", value="Greets the user")

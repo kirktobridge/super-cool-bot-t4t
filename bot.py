@@ -7,6 +7,7 @@ client = discord.Client()
 # sensitive info
 token = os.environ.get('DISCORD_TOKEN')
 
+#change
 
 @client.event
 async def on_ready():

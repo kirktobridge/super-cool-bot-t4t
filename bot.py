@@ -8,6 +8,7 @@ client = discord.Client()
 token = os.environ.get('DISCORD_TOKEN')
 
 #change
+#hi
 
 @client.event
 async def on_ready():

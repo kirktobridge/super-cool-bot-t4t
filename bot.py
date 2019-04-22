@@ -1,10 +1,13 @@
 import discord
 import os
 
+
 client = discord.Client()
 
 # sensitive info
 token = os.environ.get('DISCORD_TOKEN')
+
+insultList = []
 
 
 @client.event

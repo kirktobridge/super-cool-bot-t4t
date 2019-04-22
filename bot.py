@@ -1,14 +1,11 @@
 import discord
 import os
 
-
 client = discord.Client()
 
 # sensitive info
 token = os.environ.get('DISCORD_TOKEN')
 
-#change
-#hi
 
 @client.event
 async def on_ready():
@@ -16,6 +13,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('----------')
+
 
 # 333841395959857184 is T4T
 # 561667887698411541 is BTL
@@ -26,9 +24,8 @@ async def on_message(message):
     cameron_id = 171359348503609345
     channels = ["bot-testing"]
     valid_users = ["SpockMemes#0361", "Finrod Felagund#2710", "Bunf#4858", "Schopix#6692"]
-    #TODO: Add admin commands
-    admin_users = ["SpockMemes#0361"] # for special commands
-
+    # TODO: Add admin commands
+    admin_users = ["SpockMemes#0361"]  # for special commands
 
     if str(message.channel) in channels and str(message.author) in valid_users:
         if message.content.find("!hello") != -1:
@@ -39,7 +36,7 @@ async def on_message(message):
             await message.channel.send(f"{(client.get_user(cameron_id)).mention} is lame")
         elif message.content == "!insult":
             await message.channel.send(
-                f'{message.author.mention}, your mother was a hamster and your father smelt of elderberries')
+                f"{message.author.mention}, your mother was a hamster and your father smelt of elderberries")
         elif message.content == "!timothy":
             await message.channel.send("Timothy is very helpful")
         elif message.content == "!helpscb":

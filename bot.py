@@ -1,5 +1,6 @@
 import discord
 import os
+import random
 
 
 client = discord.Client()
@@ -7,7 +8,9 @@ client = discord.Client()
 # sensitive info
 token = os.environ.get('DISCORD_TOKEN')
 
-insultList = []
+insultFile = open('insults.txt', 'r')
+insultList = insultFile.readlines()
+
 
 
 @client.event
@@ -40,8 +43,8 @@ async def on_message(message):
         elif message.content == "!cameron":
             await message.channel.send(f"{(client.get_user(cameron_id)).mention} is lame")
         elif message.content == "!insult":
-            await message.channel.send(
-                f"{message.author.mention}, your mother was a hamster and your father smelt of elderberries")
+            insult = insultList[random.randint(0, len(insultList))]
+            await message.channel.send(f"{message.author.mention}{insult}")
         elif message.content == "!timothy":
             await message.channel.send("Timothy is very helpful")
         elif message.content == "!mokelembembe":

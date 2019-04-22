@@ -30,6 +30,8 @@ async def on_message(message):
     if str(message.channel) in channels and str(message.author) in valid_users:
         if message.content.find("!hello") != -1:
             await message.channel.send(f"What's up, {message.author.mention}?")
+        elif message.content == "!thanks":
+            await message.channel.send(f"No problem, {message.author.mention}. Happy to help!")
         elif message.content == "!users":
             await message.channel.send(f"# of members: {id.member_count}")
         elif message.content == "!cameron":

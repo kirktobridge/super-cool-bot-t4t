@@ -50,5 +50,5 @@ async def on_message(message):
             embed.add_field(name="!insult", value="Mercilessly insults you")
             await message.channel.send(content=None, embed=embed)
 
-
+#hi
 client.run(token)

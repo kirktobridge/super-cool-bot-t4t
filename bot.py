@@ -39,6 +39,8 @@ async def on_message(message):
                 f"{message.author.mention}, your mother was a hamster and your father smelt of elderberries")
         elif message.content == "!timothy":
             await message.channel.send("Timothy is very helpful")
+        elif message.content == "!mokelembembe":
+            await message.channel.send("The Mokele-mbembe is a fictional creature that first appeared in Congo River Basin mythology. It does not exist.")
         elif message.content == "!helpscb":
             embed = discord.Embed(title="help for superCoolBot1.9", description="henlo idiot, here are the commands")
             embed.add_field(name="!hello", value="Greets the user")

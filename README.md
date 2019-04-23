@@ -8,6 +8,7 @@ This is just for fun and to get more experience coding in Python and asynchronou
 * [discord.py](https://github.com/Rapptz/discord.py)
 
 ## This bot can:
+* quote The Office to users
 * insult users
 * say hello
 * that's pretty much it for now

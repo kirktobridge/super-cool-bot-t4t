@@ -13,7 +13,7 @@ insultFile = open('insults.txt', 'r')
 insultList = insultFile.readlines()
 
 officeQuotesFile = open('officeQuotes.txt', 'r')
-officeQuotesList = officeQuotesFile.readLines()
+officeQuotesList = officeQuotesFile.readlines()
 
 
 

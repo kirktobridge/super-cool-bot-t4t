@@ -8,8 +8,12 @@ client = discord.Client()
 # sensitive info
 token = os.environ.get('DISCORD_TOKEN')
 
+# load in insults list
 insultFile = open('insults.txt', 'r')
 insultList = insultFile.readlines()
+
+officeQuotesFile = open('officeQuotes.txt', 'r')
+officeQuotesList = officeQuotesFile.readLines()
 
 
 
@@ -45,16 +49,20 @@ async def on_message(message):
         elif message.content == "!insult":
             insult = insultList[random.randint(0, len(insultList))]
             await message.channel.send(f"{message.author.mention}{insult}")
+        elif message.content == "!office":
+            officeQuote = officeQuotesList[random.randint(0, len(officeQuotesList))]
+            await message.channel.send(f"Here's an office quote for you, {message.author.mention}: {officeQuote}")
         elif message.content == "!mokelembembe":
             await message.channel.send("The Mokele-mbembe is a fictional creature that"
                                        "first appeared in Congo River Basin mythology. It does not exist.")
         elif message.content == "!helpscb":
-            embed = discord.Embed(title="help for superCoolBot1.9", description="henlo idiot, here are the commands")
-            embed.add_field(name="!hello", value="Greets the user")
-            embed.add_field(name="!users", value="Prints number of users")
-            embed.add_field(name="!cameron", value="States facts about Cameron")
-            embed.add_field(name="!insult", value="Mercilessly insults you")
+            embed = discord.Embed(title="help for superCoolBot", description="commands")
+            embed.add_field(name="!hello", value="Greets the user.")
+            embed.add_field(name="!insult", value="Mercilessly insults you.")
+            embed.add_field(name="!office", value="Gets a random quote from The Office.")
+            embed.add_field(name="!cameron", value="States facts about Cameron.")
+            embed.add_field(name="!mokelembembe", value="States facts about the Mokele-mbembe myth.")
             await message.channel.send(content=None, embed=embed)
 
-#hi
+
 client.run(token)

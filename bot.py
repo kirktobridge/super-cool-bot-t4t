@@ -20,7 +20,7 @@ prevOfficeQuoteIndex = -1
 
 # load in Schopix quotes list
 schopixQuotesFile = open('schopixQuotes.txt', 'r')
-schopixQuotesList = officeQuotesFile.readlines()
+schopixQuotesList = schopixQuotesFile.readlines()
 prevSchopixQuoteIndex = -1
 
 
@@ -65,7 +65,7 @@ async def on_message(message):
             index = random.randint(0, len(officeQuotesList))
             global prevOfficeQuoteIndex
             while index == prevOfficeQuoteIndex:
-                index =random.randint(0, len(officeQuotesList))
+                index = random.randint(0, len(officeQuotesList))
             prevOfficeQuoteIndex = index
             officeQuote = officeQuotesList[index]
             await message.channel.send(f"Here's an office quote for you, {message.author.mention}:\n{officeQuote}")

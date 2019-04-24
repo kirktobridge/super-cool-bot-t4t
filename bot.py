@@ -79,9 +79,9 @@ async def on_message(message):
             await message.channel.send(f"Here's a Schopix quote for you, {message.author.mention}:\n{schopixQuote}")
         elif message.content == "!mokelembembe":
             await message.channel.send("The Mokele-mbembe is a fictional creature that"
-                                       "first appeared in Congo River Basin mythology. It does not exist: http://bit.ly/2DvAPQF")
+                                       "first appeared in Congo River Basin mythology. It does not exist: <http://bit.ly/2DvAPQF>")
         elif message.content == "!contribute":
-            await message.channel.send("Click here to add quotes/contribute to this bot: http://bit.ly/2DtKWFy")
+            await message.channel.send("Click here to add quotes/contribute to this bot: <http://bit.ly/2DtKWFy>")
         elif message.content == "!helpscb":
             embed = discord.Embed(title="help for superCoolBot", description="commands")
             embed.add_field(name="!hello", value="Greets the user.")

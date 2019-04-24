@@ -75,6 +75,7 @@ async def on_message(message):
             global prevSchopixQuoteIndex
             while index == prevSchopixQuoteIndex:
                 index == random.randint(0, len(schopixQuotesList))
+            prevSchopixQuoteIndex = index
             schopixQuote = schopixQuotesList[index]
             await message.channel.send(f"Here's a Schopix quote for you, {message.author.mention}:\n{schopixQuote}")
         elif message.content == "!mokelembembe":

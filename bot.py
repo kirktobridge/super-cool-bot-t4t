@@ -1,7 +1,7 @@
-import discord
 import os
 import random
 
+import discord
 
 client = discord.Client()
 
@@ -11,10 +11,17 @@ token = os.environ.get('DISCORD_TOKEN')
 # load in insults list
 insultFile = open('insults.txt', 'r')
 insultList = insultFile.readlines()
+prevInsultIndex = 0
 
+# load in office quotes list
 officeQuotesFile = open('officeQuotes.txt', 'r')
 officeQuotesList = officeQuotesFile.readlines()
+prevOfficeQuoteIndex = -1
 
+# load in Schopix quotes list
+schopixQuotesFile = open('schopixQuotes.txt', 'r')
+schopixQuotesList = officeQuotesFile.readlines()
+prevSchopixQuoteIndex = -1
 
 
 @client.event
@@ -47,11 +54,28 @@ async def on_message(message):
         elif message.content == "!cameron":
             await message.channel.send(f"{(client.get_user(cameron_id)).mention} is lame")
         elif message.content == "!insult":
-            insult = insultList[random.randint(0, len(insultList))]
+            index = random.randint(0, len(insultList))
+            global prevInsultIndex
+            while index == prevInsultIndex:
+                index = random.randint(0, len(insultList))
+            prevInsultIndex = index
+            insult = insultList[index]
             await message.channel.send(f"{message.author.mention}{insult}")
         elif message.content == "!office":
-            officeQuote = officeQuotesList[random.randint(0, len(officeQuotesList))]
-            await message.channel.send(f"Here's an office quote for you, {message.author.mention}: {officeQuote}")
+            index = random.randint(0, len(officeQuotesList))
+            global prevOfficeQuoteIndex
+            while index == prevOfficeQuoteIndex:
+                index =random.randint(0, len(officeQuotesList))
+            prevOfficeQuoteIndex = index
+            officeQuote = officeQuotesList[index]
+            await message.channel.send(f"Here's an office quote for you, {message.author.mention}:\n{officeQuote}")
+        elif message.content == "!schopix":
+            index = random.randint(0, len(schopixQuotesList))
+            global prevSchopixQuoteIndex
+            while index == prevSchopixQuoteIndex:
+                index == random.randint(0, len(schopixQuotesList))
+            schopixQuote = schopixQuotesList[index]
+            await message.channel.send(f"Here's a Schopix quote for you, {message.author.mention}:\n{schopixQuote}")
         elif message.content == "!mokelembembe":
             await message.channel.send("The Mokele-mbembe is a fictional creature that"
                                        "first appeared in Congo River Basin mythology. It does not exist.")
@@ -59,7 +83,7 @@ async def on_message(message):
             embed = discord.Embed(title="help for superCoolBot", description="commands")
             embed.add_field(name="!hello", value="Greets the user.")
             embed.add_field(name="!insult", value="Mercilessly insults you.")
-            embed.add_field(name="!office", value="Gets a random quote from The Office.")
+            embed.add_field(name="!office", value="Gets a random quote from the beloved American sitcom _The Office._")
             embed.add_field(name="!cameron", value="States facts about Cameron.")
             embed.add_field(name="!mokelembembe", value="States facts about the Mokele-mbembe myth.")
             await message.channel.send(content=None, embed=embed)

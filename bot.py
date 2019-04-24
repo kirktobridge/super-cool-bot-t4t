@@ -80,6 +80,8 @@ async def on_message(message):
         elif message.content == "!mokelembembe":
             await message.channel.send("The Mokele-mbembe is a fictional creature that"
                                        "first appeared in Congo River Basin mythology. It does not exist: http://bit.ly/2DvAPQF")
+        elif message.content == "!contribute":
+            await message.channel.send("Click here to add quotes/contribute to this bot: http://bit.ly/2DtKWFy")
         elif message.content == "!helpscb":
             embed = discord.Embed(title="help for superCoolBot", description="commands")
             embed.add_field(name="!hello", value="Greets the user.")
@@ -89,6 +91,7 @@ async def on_message(message):
             embed.add_field(name="!thanks", value="Thank the bot.")
             embed.add_field(name="!cameron", value="States facts about Cameron.")
             embed.add_field(name="!mokelembembe", value="States facts about the Mokele-mbembe myth.")
+            embed.add_field(name="!contribute", value="Information on how to contribute to this bot.")
             await message.channel.send(content=None, embed=embed)
 
 

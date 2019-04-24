@@ -40,7 +40,7 @@ async def on_ready():
 async def on_message(message):
     id = client.get_guild(333841395959857184)
     cameron_id = 171359348503609345
-    channels = ["bot-testing","private-bot-testing"]
+    channels = ["bot-testing"]
     valid_users = ["SpockMemes#0361", "Finrod Felagund#2710", "Bunf#4858", "Schopix#6692"]
     # TODO: Add admin commands
     admin_users = ["SpockMemes#0361"]  # for special commands

@@ -8,9 +8,7 @@ This is just for fun and to get more experience coding in Python and asynchronou
 * [discord.py](https://github.com/Rapptz/discord.py)
 
 ## this bot can:
-* quote The Office to users
-* quote stuff from my friend's YouTube channel [Schopix](https://www.youtube.com/user/Schopix)
-* insult users
-* say hello
-* that's pretty much it for now
-
+* Quote _The Office_ to users.
+* Quote stuff from my friend's YouTube channel [Schopix](https://www.youtube.com/user/Schopix).
+* Insult users (only upon request, of course).
+* Calmly explain that the [Mokele Mbembe](https://en.wikipedia.org/wiki/Mokele-mbembe) is a myth, and there are definitely not dinosaurs in Africa.

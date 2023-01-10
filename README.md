@@ -1,8 +1,8 @@
 # super-cool-bot-t4t
 
 ## what is this?
-A Discord bot I'm coding using Python. It's a server bot, currently deployed on Heroku.
-This is just for fun and to get more experience coding in Python and asynchronous programming.
+A Discord bot I coded using Python. It's a server bot, once deployed on Heroku.
+This was just for fun and to get more experience coding in Python.
 
 ## this bot uses:
 * [discord.py](https://github.com/Rapptz/discord.py)
